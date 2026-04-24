@@ -1,0 +1,16 @@
+def prime (n):
+    if n<2:
+        return False
+    for i in range(2,n):
+        if n%i==0:
+            return False
+    return True
+flag=0
+num=int(input("enter the number:"))
+for i in range(2,num):
+    if prime(i) and prime(num-i):
+        print(num,"=",i,"+",num-i)
+        flag=1
+        break
+if flag==0:
+        print("Cannot be expressed as sum of two numbers")
